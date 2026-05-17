@@ -39,11 +39,11 @@ const AI_TOOLS = [
   },
   {
     id: 5,
-    name: "钉钉AI助理",
+    name: "钉钉AI助理（悟空）",
     category: "agent",
     tags: ["国产", "免费", "大厂"],
-    description: "阿里钉钉内置AI助理，基于钉钉办公生态，支持智能会议、文档生成",
-    url: "https://www.dingtalk.com",
+    description: "钉钉全新AI原生工作平台，深度集成钉钉生态，支持任务规划、自动执行",
+    url: "https://wukong.dingtalk.com/",
     views: 18937462
   },
   {
@@ -97,7 +97,7 @@ const AI_TOOLS = [
     category: "agent",
     tags: ["国产", "免费", "大厂"],
     description: "基于混元大模型的一站式智能体创作与分发平台，零代码创建",
-    url: "https://ai.tentcent.com",
+    url: "https://adp.tencentcloud.com/zh",
     views: 16847392
   },
   {
@@ -353,7 +353,7 @@ const AI_TOOLS = [
     category: "image",
     tags: ["国产", "免费", "大厂"],
     description: "美图旗下AI绘画工具，操作简单，风格丰富",
-    url: "https://www.jiananaai.com",
+    url: "https://www.meitu.com/zh/",
     views: 18937462
   },
   {
