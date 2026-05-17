@@ -692,7 +692,7 @@ const AI_TOOLS = [
     category: "code",
     tags: ["国产", "免费", "独立开发"],
     description: "字节跳动AI编程工具，国产Cursor，对开发者免费",
-    url: "https://www.trae.com.cn",
+    url: "https://www.trae.cn/",
     views: 12847392
   },
   {
