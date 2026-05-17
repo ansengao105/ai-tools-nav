@@ -418,7 +418,7 @@ const AI_TOOLS = [
     category: "video",
     tags: ["国产", "付费", "大厂"],
     description: "快手自研视频生成大模型，文生视频能力强，运镜自然",
-    url: "https://klingai.kuaishou.com",
+    url: "https://klingai.com/app/",
     views: 29847364
   },
   {
@@ -582,7 +582,7 @@ const AI_TOOLS = [
     category: "office",
     tags: ["海外", "免费"],
     description: "一键生成PPT，AI辅助设计，适合汇报和演示",
-    url: "https://gamma.app",
+    url: "https://gamma.app/",
     views: 26937462
   },
   {
@@ -766,7 +766,7 @@ const AI_TOOLS = [
     category: "search",
     tags: ["海外", "免费", "独立开发"],
     description: "AI搜索神器，实时联网，答案带引用，学术研究必备",
-    url: "https://www.perplexity.ai",
+    url: "https://www.perplexity.ai/",
     views: 32847392
   },
   {
