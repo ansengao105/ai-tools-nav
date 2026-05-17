@@ -1,32 +1,55 @@
 # AI工具导航站
 
-> 收录国内主流AI工具，帮助新手快速找到合适的AI助手
+> 收录国内主流AI工具，帮助新手快速找到合适的AI助手 | 2026年最新版本
 
-## 本地预览
+## 网站预览
 
 直接用浏览器打开 `index.html` 即可预览。
+
+## 内容概览
+
+- **收录工具**: 72款
+- **分类数量**: 11个分类
+- **分类包括**:
+  - AI智能体/Agent框架（OpenClaw、QClaw、WorkBuddy、飞书aily等）
+  - 聊天对话AI（DeepSeek、豆包、通义千问、Kimi等）
+  - AI图像生成（即梦、通义万相、Midjourney等）
+  - AI视频生成（可灵、剪映、Sora等）
+  - AI办公（WPS AI、飞书、钉钉等）
+  - AI编程（Cursor、通义灵码、GitHub Copilot等）
+  - AI搜索（夸克、百度AI搜索、Perplexity等）
+  - AI音乐（网易天音、Suno等）
+  - AI数字人（万兴播爆、HeyGen等）
+  - 云服务（阿里云、腾讯云、百度智能云等）
+  - 效率工具（Monica、Canva、Grammarly等）
 
 ## 文件说明
 
 ```
 ai-tools-site/
 ├── index.html    # 主页面
-├── styles.css     # 样式文件
-├── data.js        # AI工具数据
-├── app.js         # 主逻辑
+├── styles.css    # 样式文件
+├── data.js       # AI工具数据（72款工具）
+├── app.js        # 主逻辑
 └── README.md      # 说明文档
 ```
 
 ## 添加/修改工具
 
-编辑 `data.js` 文件，按照现有格式添加新工具即可。
+编辑 `data.js` 文件，按照现有格式添加新工具即可。每个工具包含：
+- `name`: 工具名称
+- `category`: 分类（agent/chat/image/video/office/code/search/music/digital/cloud）
+- `tags`: 标签（国产/开源/海外/免费/付费）
+- `description`: 简介
+- `url`: 官网链接
+- `views`: 浏览量（用于排行）
 
 ## 部署到 GitHub Pages
 
 1. 提交代码到 GitHub 仓库：
    ```bash
    git add .
-   git commit -m "AI工具导航站 v1.0"
+   git commit -m "更新AI工具导航站 - 收录72款工具"
    git push
    ```
 
