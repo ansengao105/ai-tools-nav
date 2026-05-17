@@ -261,7 +261,7 @@ const AI_TOOLS = [
     category: "chat",
     tags: ["国产", "免费", "独立开发"],
     description: "百川智能出品，擅长对话和知识问答，开源模型丰富",
-    url: "https://www.baichuan-ai.com",
+    url: "https://www.baichuan-ai.com/",
     views: 9847392
   },
   {
@@ -270,7 +270,7 @@ const AI_TOOLS = [
     category: "chat",
     tags: ["国产", "免费", "大厂"],
     description: "商汤科技出品，量大模型能力强，多模态",
-    url: "https://商量ai.com",
+    url: "https://chat.sensetime.com/",
     views: 7846293
   },
 
@@ -362,7 +362,7 @@ const AI_TOOLS = [
     category: "image",
     tags: ["国产", "免费", "独立开发"],
     description: "阿里巴巴设计师团队出品，专注电商设计素材",
-    url: "https://www.duiyouai.com",
+    url: "https://d.design/",
     views: 12847392
   },
   {
@@ -382,7 +382,7 @@ const AI_TOOLS = [
     description: "国产AI艺术生成工具，专注插画和概念设计",
     url: "https://www.tiamat.com",
     views: 7846293
-  },},
+  },
   {
     id: 43,
     name: "Vega AI",
@@ -398,7 +398,7 @@ const AI_TOOLS = [
     category: "image",
     tags: ["国产", "免费", "独立开发"],
     description: "AI图像生成和编辑工具，界面简洁易用",
-    url: "https://picpi.cn",
+    url: "https://www.picpi.cn/",
     views: 4937293
   },
   {
@@ -692,7 +692,7 @@ const AI_TOOLS = [
     category: "code",
     tags: ["国产", "免费", "独立开发"],
     description: "字节跳动AI编程工具，国产Cursor，对开发者免费",
-    url: "https://trae.ai",
+    url: "https://www.trae.com.cn",
     views: 12847392
   },
   {
@@ -869,7 +869,7 @@ const AI_TOOLS = [
     category: "music",
     tags: ["海外", "免费", "独立开发"],
     description: "全球最强AI音乐生成，输入文字即可创作完整歌曲",
-    url: "https://suno.ai",
+    url: "https://suno.com",
     views: 29247837
   },
   {
@@ -887,7 +887,7 @@ const AI_TOOLS = [
     category: "music",
     tags: ["国产", "免费", "大厂"],
     description: "腾讯音乐旗下AI作曲工具，支持多种风格",
-    url: "https://y.qq.com",
+    url: "https://y.qq.com/vemus/",
     views: 8928374
   },
   {
@@ -896,7 +896,7 @@ const AI_TOOLS = [
     category: "music",
     tags: ["国产", "免费", "大厂"],
     description: "科大讯飞AI音乐创作平台",
-    url: "https://music.xfyun.cn",
+    url: "https://www.iflytekmusic.com/",
     views: 5847293
   },
   {
