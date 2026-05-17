@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI工具导航 - 新手小白的AI合集</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>🤖 AI工具导航</h1>
+      <p>收录国内主流AI工具，帮助新手快速找到合适的AI助手</p>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索AI工具...">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 分类导航 -->
+    <nav class="category-nav">
+      <button class="category-btn active" data-category="all">全部</button>
+      <button class="category-btn" data-category="chat">聊天对话</button>
+      <button class="category-btn" data-category="image">图像生成</button>
+      <button class="category-btn" data-category="video">视频生成</button>
+      <button class="category-btn" data-category="office">AI办公</button>
+      <button class="category-btn" data-category="code">AI编程</button>
+      <button class="category-btn" data-category="search">AI搜索</button>
+      <button class="category-btn" data-category="music">AI音乐</button>
+      <button class="category-btn" data-category="digital">数字人</button>
+    </nav>
+
+    <!-- 工具列表 -->
+    <section id="toolsList" class="tools-grid"></section>
+
+    <!-- 热门排行 -->
+    <section class="ranking-section">
+      <h2>🔥 点击排行</h2>
+      <div id="rankingList" class="ranking-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 AI工具导航 | 新手小白的AI合集</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
