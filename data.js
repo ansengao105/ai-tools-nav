@@ -1,3 +1,22 @@
+// ===== 分类元数据 =====
+const CATEGORIES = [
+  { id: 'agent',   name: '🤖 AI智能体',   desc: '能自动化执行任务的AI助手',          icon: '🤖' },
+  { id: 'chat',    name: '💬 聊天对话',    desc: '回答问题、写作、翻译、对话',          icon: '💬' },
+  { id: 'image',   name: '🎨 图像生成',    desc: 'AI绘画、图片生成与编辑',              icon: '🎨' },
+  { id: 'video',   name: '🎬 视频生成',    desc: '文生视频、AI剪辑、配音',               icon: '🎬' },
+  { id: 'office',  name: '📊 AI办公',      desc: '文档、PPT、表格等办公效率工具',        icon: '📊' },
+  { id: 'code',    name: '💻 AI编程',      desc: '代码生成、补全、调试的编程助手',        icon: '💻' },
+  { id: 'search',  name: '🔍 AI搜索',      desc: '智能搜索、信息检索、问答引擎',          icon: '🔍' },
+  { id: 'writing', name: '✍️ AI写作',      desc: '内容创作、文案撰写、文本润色',          icon: '✍️' },
+  { id: 'music',   name: '🎵 AI音乐',      desc: 'AI作曲、歌声合成、音乐生成',           icon: '🎵' },
+  { id: 'digital', name: '🧑‍💼 数字人',      desc: '虚拟数字人、视频制作、直播',            icon: '🧑\u200d💼' },
+  { id: 'model',   name: '☁️ 模型平台',    desc: '大模型API、云服务平台',                 icon: '☁️' },
+  { id: 'tool',    name: '🛠️ 效率工具',    desc: '其他AI效率工具和助手',                  icon: '🛠️' },
+];
+
+// 导出分类
+window.CATEGORIES = CATEGORIES;
+
 // AI工具数据 - 2026年最新版（更全面收录）
 const AI_TOOLS = [
   // ========== AI智能体/Agent框架 ==========

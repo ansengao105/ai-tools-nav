@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI工具导航 - 帮助小白找到合适的AI助手</title>
+  <meta name="description" content="收录122款AI工具，对比式呈现，帮你做决策。新手友好的AI工具导航，从入门到精通。">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== V2 专用样式 ===== */
+    
+    /* Hero 区域 */
+    .hero {
+      position: relative;
+      padding: 80px 0 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(124,58,237,0.3) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 50%, rgba(0,212,255,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #00d4ff, #7c3aed, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+    .hero .subtitle {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 40px;
+    }
+    .hero .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .hero .stat-item {
+      text-align: center;
+    }
+    .hero .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #00d4ff;
+    }
+    .hero .stat-label {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    .hero .search-box {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero .search-box input {
+      width: 100%;
+      padding: 18px 28px;
+      border-radius: 50px;
+      border: 2px solid rgba(124,58,237,0.5);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 1.1rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+    .hero .search-box input:focus {
+      border-color: #00d4ff;
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 30px rgba(0,212,255,0.2);
+    }
+    .hero .search-box input::placeholder { color: #888; }
+
+    /* 本周热门 */
+    .hot-section {
+      margin: 50px 0;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title .fire { font-size: 1.6rem; }
+    .hot-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .hot-scroll::-webkit-scrollbar { display: none; }
+    .hot-card {
+      flex-shrink: 0;
+      width: 260px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .hot-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ff6b6b, #ffd700);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .hot-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,107,107,0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .hot-card:hover::before { opacity: 1; }
+    .hot-rank {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #ff6b6b, #ffd700);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .hot-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .hot-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .hot-desc {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .hot-views {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: #ff6b6b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 编辑推荐 */
+    .editor-section {
+      margin: 50px 0;
+    }
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .editor-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: all 0.35s;
+      position: relative;
+    }
+    .editor-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124,58,237,0.5);
+      box-shadow: 0 16px 40px rgba(124,58,237,0.15);
+    }
+    .editor-reason {
+      display: inline-block;
+      padding: 4px 12px;
+      background: linear-gradient(90deg, rgba(124,58,237,0.3), rgba(0,212,255,0.2));
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #b0a0ff;
+      margin-bottom: 14px;
+      border: 1px solid rgba(124,58,237,0.3);
+    }
+    .editor-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .editor-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .editor-desc {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.5;
+    }
+    .editor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .editor-tag {
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      background: rgba(255,255,255,0.08);
+      color: #aaa;
+    }
+
+    /* 分类卡片 */
+    .category-section {
+      margin: 50px 0;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .category-card {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .category-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      transition: border-color 0.3s;
+      pointer-events: none;
+    }
+    .category-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+    .category-card:hover::after {
+      border-color: rgba(0,212,255,0.5);
+    }
+    .cat-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .cat-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .cat-count {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 14px;
+    }
+    .cat-tools {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .cat-tool-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+    .cat-tool-logo {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .cat-viewall {
+      font-size: 0.82rem;
+      color: #00d4ff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cat-viewall:hover { text-decoration: underline; }
+
+    /* 所有工具列表（筛选区） */
+    .all-tools-section {
+      margin: 50px 0;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
+    .filter-bar .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      overflow: visible;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .category-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .subtitle { font-size: 1rem; }
+      .hero .hero-stats { gap: 20px; }
+      .hero .stat-num { font-size: 1.5rem; }
+      .editor-grid { grid-template-columns: repeat(2, 1fr); }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .hero { padding: 50px 0 40px; }
+      .hero h1 { font-size: 1.6rem; }
+      .editor-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .hot-card { width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero 区域 -->
+  <div id="hero"></div>
+
+  <main class="container">
+    <!-- 本周热门 -->
+    <section class="hot-section">
+      <div class="section-header">
+        <h2 class="section-title"><span class="fire">🔥</span> 本周热门</h2>
+      </div>
+      <div id="hotSection" class="hot-scroll"></div>
+    </section>
+
+    <!-- 编辑推荐 -->
+    <section class="editor-section">
+      <div class="section-header">
+        <h2 class="section-title"><span>✨</span> 编辑推荐</h2>
+      </div>
+      <div id="editorSection" class="editor-grid"></div>
+    </section>
+
+    <!-- 分类卡片 -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title"><span>📂</span> 分类浏览</h2>
+      </div>
+      <div id="categorySection" class="category-grid"></div>
+    </section>
+
+    <!-- 所有工具列表 -->
+    <section class="all-tools-section">
+      <div class="section-header">
+        <h2 class="section-title"><span>🔎</span> 所有工具</h2>
+      </div>
+      <div class="filter-bar">
+        <nav class="category-nav">
+          <button class="category-btn active" data-category="all">全部</button>
+          <button class="category-btn" data-category="agent">AI智能体</button>
+          <button class="category-btn" data-category="chat">聊天对话</button>
+          <button class="category-btn" data-category="image">图像生成</button>
+          <button class="category-btn" data-category="video">视频生成</button>
+          <button class="category-btn" data-category="office">AI办公</button>
+          <button class="category-btn" data-category="code">AI编程</button>
+          <button class="category-btn" data-category="search">AI搜索</button>
+          <button class="category-btn" data-category="writing">AI写作</button>
+          <button class="category-btn" data-category="music">AI音乐</button>
+          <button class="category-btn" data-category="digital">数字人</button>
+          <button class="category-btn" data-category="model">模型平台</button>
+          <button class="category-btn" data-category="tool">效率工具</button>
+        </nav>
+      </div>
+      <div id="toolsList" class="tools-grid"></div>
+    </section>
+
+    <!-- 热门排行 -->
+    <section class="ranking-section">
+      <h2>🔥 点击排行 TOP10</h2>
+      <div id="rankingList" class="ranking-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 AI工具导航 | 新手小白的AI合集 | 共收录 122 款AI工具</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

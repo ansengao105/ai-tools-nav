@@ -57,6 +57,47 @@ ai-tools-site/
 
 3. 等待几分钟后即可访问：`https://ansengao105.github.io/ai-tools-nav`
 
+---
+
+## SEO 优化说明
+
+### sitemap.xml（站点地图）
+
+已生成 `sitemap.xml`，包含首页和13个分类页的URL，格式符合 Google sitemap 标准。
+
+### robots.txt
+
+已生成 `robots.txt`，允许所有搜索引擎爬虫访问。
+
+### .nojekyll
+
+已创建空文件 `.nojekyll`，用于让 GitHub Pages 不过滤下划线开头的文件（如 `_next` 目录）。
+
+### 提交到 Google Search Console
+
+1. 访问 [Google Search Console](https://search.google.com/search-console)
+   - 使用 Google 账号登录（推荐用 GitHub 账号关联）
+
+2. 添加资源：
+   - 选择「网域」并输入 `ansengao105.github.io`
+   - 或选择「网址前缀」并输入 `https://ansengao105.github.io/ai-tools-nav/`
+
+3. 验证网站所有权（选择一种验证方式）
+
+4. 验证通过后：
+   - 左侧菜单 → 「sitemap」→ 输入 `sitemap.xml` → 点击提交
+   - Google 会自动抓取并索引你的网站
+
+5. 提交后可以在「检查网址」中查询特定页面的索引状态
+
+### 验证 SEO 效果
+
+- **site 命令检查**：在 Google 搜索框输入 `site:ansengao105.github.io/ai-tools-nav` 查看已收录页面
+- **Search Console 覆盖率**：在 Search Console 查看「索引」→「覆盖率」报告
+- **页面曝光**：搜索「AI工具导航」「AI工具导航站」等关键词查看排名
+
+---
+
 ## 点击量排名功能说明
 
 目前排行榜的浏览量数据是模拟数据，存放在本地 `data.js` 中。
