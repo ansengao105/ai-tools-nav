@@ -69,16 +69,25 @@ header p {
   color: #888;
 }
 
-/* 分类导航 */
+/* 分类导航 - 移动端横向滚动 */
 .category-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 30px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .category-btn {
+  flex-shrink: 0;
   padding: 10px 20px;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -94,6 +103,101 @@ header p {
   background: linear-gradient(90deg, #7c3aed, #00d4ff);
   color: #fff;
   border-color: transparent;
+}
+
+/* 今日推荐区域 */
+.daily-picks {
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(0, 212, 255, 0.1));
+  border-radius: 20px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.daily-picks-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.daily-picks-header h2 {
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, #ffd700, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.daily-picks-badge {
+  margin-left: 12px;
+  padding: 4px 12px;
+  background: rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #ffd700;
+}
+
+.daily-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.daily-pick-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.daily-pick-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.daily-pick-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.daily-pick-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.daily-pick-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.daily-pick-info span {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.daily-pick-tag {
+  padding: 3px 8px;
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.7rem;
+  color: #00d4ff;
+  flex-shrink: 0;
 }
 
 /* 工具网格 */
@@ -120,31 +224,98 @@ header p {
   border-color: rgba(124, 58, 237, 0.5);
 }
 
-.tool-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  color: #00d4ff;
+.tool-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.tool-card .tag {
-  display: inline-block;
-  padding: 4px 12px;
-  background: rgba(124, 58, 237, 0.3);
-  border-radius: 15px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
+.tool-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.tool-card-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.tool-card-title h3 {
+  font-size: 1.1rem;
+  color: #00d4ff;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-api-icon {
+  font-size: 0.9rem;
+}
+
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tool-tag {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  background: rgba(124, 58, 237, 0.25);
+  color: #b0a0ff;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.tool-tag.free {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.tool-tag.paid {
+  background: rgba(251, 146, 60, 0.2);
+  color: #fb923c;
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.tool-tag.domestic {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+  border-color: rgba(0, 212, 255, 0.3);
 }
 
 .tool-card p {
   color: #b0b0b0;
   font-size: 0.9rem;
   line-height: 1.5;
+  margin-bottom: 12px;
 }
 
 .tool-card .stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.85rem;
   color: #888;
+}
+
+.tool-card .stats .views {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* 排行区域 */
@@ -173,6 +344,7 @@ header p {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .ranking-item:hover {
@@ -189,6 +361,7 @@ header p {
   border-radius: 50%;
   font-weight: bold;
   margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .ranking-item .rank.top3 {
@@ -197,11 +370,15 @@ header p {
 
 .ranking-item .info {
   flex: 1;
+  min-width: 0;
 }
 
 .ranking-item .info h4 {
   font-size: 1rem;
   margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ranking-item .info span {
@@ -218,22 +395,147 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 响应式 */
-@media (max-width: 768px) {
+/* ========================================
+   响应式媒体查询
+   ======================================== */
+
+/* 手机端 (< 576px) */
+@media (max-width: 576px) {
+  header {
+    padding: 25px 0;
+  }
+  
   header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
-  .tools-grid {
-    grid-template-columns: 1fr;
+  header p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
   }
   
+  .search-box {
+    width: 100%;
+    max-width: none;
+    padding: 0 10px;
+  }
+  
+  .search-box input {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+  
+  /* 分类导航横向滚动 */
   .category-nav {
-    gap: 8px;
+    padding: 20px 0;
+    justify-content: flex-start;
   }
   
   .category-btn {
-    padding: 8px 16px;
+    padding: 8px 14px;
     font-size: 0.85rem;
+  }
+  
+  /* 今日推荐移动端 */
+  .daily-picks {
+    margin: 20px 0;
+    padding: 18px 15px;
+  }
+  
+  .daily-picks-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .daily-pick-card {
+    padding: 12px;
+  }
+  
+  .daily-pick-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  /* 工具卡片单列 */
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px 0;
+  }
+  
+  .tool-card {
+    padding: 16px;
+  }
+  
+  .tool-logo {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+  
+  .tool-card-title h3 {
+    font-size: 1rem;
+  }
+  
+  /* 排行移动端 */
+  .ranking-section {
+    margin-top: 30px;
+    padding: 20px 15px;
+  }
+  
+  .ranking-item {
+    padding: 12px 15px;
+  }
+  
+  .ranking-item .rank {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+    margin-right: 12px;
+  }
+  
+  .ranking-item .info h4 {
+    font-size: 0.95rem;
+  }
+  
+  footer {
+    padding: 30px 0;
+    margin-top: 30px;
+  }
+  
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* 平板端 (577px - 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .daily-picks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .category-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* 平板及以上 (> 768px) */
+@media (min-width: 769px) {
+  .search-box {
+    max-width: 550px;
+  }
+}
+
+/* 大屏幕优化 (> 1200px) */
+@media (min-width: 1200px) {
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

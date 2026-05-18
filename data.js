@@ -17,7 +17,8 @@ const AI_TOOLS = [
     tags: ["国产", "免费", "大厂"],
     description: "腾讯出品，微信远程操控电脑，本地部署，支持多Agent并行工作",
     url: "https://qclaw.qq.com",
-    views: 25482947
+    views: 25482947,
+    isNew: true
   },
   {
     id: 3,
@@ -89,7 +90,8 @@ const AI_TOOLS = [
     tags: ["国产", "免费", "大厂"],
     description: "阿里云大模型服务平台，支持Qwen3全系列，低代码构建智能体",
     url: "https://bailian.aliyun.com",
-    views: 17846293
+    views: 17846293,
+    isNew: true
   },
   {
     id: 11,
@@ -217,7 +219,8 @@ const AI_TOOLS = [
     tags: ["国产", "免费", "大厂"],
     description: "智谱AI出品，GLM模型开源，中文理解好，学术场景首选",
     url: "https://chatglm.cn",
-    views: 27248539
+    views: 27248539,
+    isNew: true
   },
   {
     id: 25,
@@ -291,7 +294,8 @@ const AI_TOOLS = [
     tags: ["国产", "免费", "大厂"],
     description: "阿里旗下AI绘画工具，风格多样，生成速度快",
     url: "https://wanxiang.aliyun.com",
-    views: 29874637
+    views: 29874637,
+    isNew: true
   },
   {
     id: 33,
@@ -437,7 +441,8 @@ const AI_TOOLS = [
     tags: ["国产", "免费", "大厂"],
     description: "字节跳动出品，AI剪辑+AI成片，短视频创作者必备",
     url: "https://www.jianying.com",
-    views: 51648392
+    views: 51648392,
+    isNew: true
   },
   {
     id: 49,
@@ -529,7 +534,8 @@ const AI_TOOLS = [
     tags: ["国产", "免费", "大厂"],
     description: "深度嵌入WPS文档/表格/PPT，职场办公首选",
     url: "https://ai.wps.cn",
-    views: 47263847
+    views: 47263847,
+    isNew: true
   },
   {
     id: 59,
@@ -648,7 +654,8 @@ const AI_TOOLS = [
     tags: ["海外", "付费", "独立开发"],
     description: "最强AI编程IDE，代码补全强，Tab模式效率高",
     url: "https://cursor.com",
-    views: 41847392
+    views: 41847392,
+    isNew: true
   },
   {
     id: 72,
@@ -767,7 +774,8 @@ const AI_TOOLS = [
     tags: ["海外", "免费", "独立开发"],
     description: "AI搜索神器，实时联网，答案带引用，学术研究必备",
     url: "https://www.perplexity.ai/",
-    views: 32847392
+    views: 32847392,
+    isNew: true
   },
   {
     id: 85,
