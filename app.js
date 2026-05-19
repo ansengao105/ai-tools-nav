@@ -364,6 +364,31 @@ function init() {
     renderTools();
   }
 
+  // 搜索框事件
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.trim();
+      currentCategory = 'all';
+      renderTools(term);
+      // 高亮"全部"按钮
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === 'all');
+      });
+    });
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const term = e.target.value.trim();
+        currentCategory = 'all';
+        renderTools(term);
+        document.querySelectorAll('.category-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.category === 'all');
+        });
+      }
+    });
+  }
+
   // 分类导航事件（v2页面）
   document.querySelectorAll('.category-btn').forEach(btn => {
     btn.addEventListener('click', () => {
