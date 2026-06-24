@@ -611,6 +611,16 @@ const AI_TOOLS = [
     views: 26937462
   },
   {
+    id: 641,
+    name: "Remio",
+    category: "office",
+    tags: ["海外", "免费", "独立开发"],
+    description: "本地优先AI记忆与知识库，索引文件、网页、会议、邮件和笔记，快速找回个人上下文",
+    url: "https://remio.ai",
+    views: 12847392,
+    isNew: true
+  },
+  {
     id: 65,
     name: "百度文库",
     category: "office",
