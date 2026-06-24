@@ -8,7 +8,7 @@
 
 ## 内容概览
 
-- **收录工具**: 72款
+- **收录工具**: 73款
 - **分类数量**: 11个分类
 - **分类包括**:
   - AI智能体/Agent框架（OpenClaw、QClaw、WorkBuddy、飞书aily等）
@@ -29,7 +29,7 @@
 ai-tools-site/
 ├── index.html    # 主页面
 ├── styles.css    # 样式文件
-├── data.js       # AI工具数据（72款工具）
+├── data.js       # AI工具数据（73款工具）
 ├── app.js        # 主逻辑
 └── README.md      # 说明文档
 ```
@@ -49,7 +49,7 @@ ai-tools-site/
 1. 提交代码到 GitHub 仓库：
    ```bash
    git add .
-   git commit -m "更新AI工具导航站 - 收录72款工具"
+   git commit -m "更新AI工具导航站 - 收录73款工具"
    git push
    ```
 
